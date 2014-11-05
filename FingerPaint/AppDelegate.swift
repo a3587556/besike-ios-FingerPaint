@@ -15,7 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // Create a window that's the same size as the screen.
+        let window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window = window
+        
+        // Load the story board from the main bundle.
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        // Get the initial controller, and assign it to be the root controller.
+        let controller = storyboard.instantiateInitialViewController() as UIViewController
+        
+        self.window!.rootViewController = controller
+        
+        // Show the window
+        self.window!.makeKeyAndVisible()
+        
         return true
     }
 
@@ -40,6 +54,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+//    func colorPickerTapped(button: UIButton) {
+//        println("tapped: \(button.backgroundColor)")
+//    }
 
 
 }

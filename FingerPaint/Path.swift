@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Path: UIView {
+class Path {
 
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -18,4 +18,13 @@ class Path: UIView {
     }
     */
 
+    var points: [CGPoint] = []
+    let color: UIColor
+    init(color: UIColor) {
+        self.color = color
+    }
+
+    func add(point: CGPoint) {
+        points.append(point)
+    }
 }
